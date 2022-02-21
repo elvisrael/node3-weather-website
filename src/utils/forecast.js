@@ -11,7 +11,7 @@ const forecast = (longitude, latitude, callback) => {
             callback(body.error)
         }else{
             callback(undefined,
-                body.current.weather_descriptions +' The temperature: '+ body.current.temperature + '. Feels like: ' + body.current.feelslike
+                'Weather Description: ' + body.current.weather_descriptions +', The temperature: '+ body.current.temperature + '. Feels like: ' + body.current.feelslike
             )
         }
     })
