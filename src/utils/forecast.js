@@ -10,8 +10,9 @@ const forecast = (longitude, latitude, callback) => {
         }else if(body.error){
             callback(body.error)
         }else{
+            console.log(body);
             callback(undefined,
-                'Weather Description: ' + body.current.weather_descriptions +', The temperature: '+ body.current.temperature + '. Feels like: ' + body.current.feelslike
+                'Weather Description: ' + body.current.weather_descriptions +',\n The temperature: '+ body.current.temperature + ',\n Feels like: ' + body.current.feelslike + ', Humidity: ' + body.current.humidity + '%'
             )
         }
     })
