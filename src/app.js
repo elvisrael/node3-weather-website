@@ -52,7 +52,6 @@ app.get('/help/*', (req,res) => {
         name: 'Evgenyl'
 
     })
-    // res.send('My 404 page')
 })
 app.get('/weather', (req, res) => {
     const address = req.query.address
@@ -65,13 +64,10 @@ app.get('/weather', (req, res) => {
         if(err){
             return res.send(err);
         }
-        // console.log('Error:',err);
-        // console.log('Data:', location);
         forecast(longitude, latitude, (error, forecastData = {}) => {
             if(error){
                 return res.send({error:error});
             }
-            // console.log('Error:', error)
             res.send({
                 location,
                 forecast: forecastData,
